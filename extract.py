@@ -24,7 +24,11 @@ def getGoogleHomepage(driver: webdriver.Chrome) -> str:
 def getCustomHomepage(driver: webdriver.Chrome,url) -> str:
     driver.get(url)
     print("sleeping")
+    time.sleep(15)    
+    scroll_amount = 400  # Adjust the value as per your requirements
+    import time
     time.sleep(10)
+    driver.execute_script(f"window.scrollBy(0, {scroll_amount});")
     print("done")
     return driver.page_source
 
