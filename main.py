@@ -1,4 +1,5 @@
 from fastapi import FastAPI, BackgroundTasks, HTTPException
+from fastapi import Request
 from pydantic import BaseModel
 from extract import *
 import os
