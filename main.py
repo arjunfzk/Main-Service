@@ -28,7 +28,7 @@ async def demo_get():
     return homepage
 
 
-@app.get("/custompage")
+@app.post("/custompage")
 async def demo_get(request: Request):
     driver=createDriver()
     url = (await request.json())['url']
