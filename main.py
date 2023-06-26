@@ -27,6 +27,16 @@ async def demo_get():
     driver.close()
     return homepage
 
+
+@app.get("/custompage")
+async def demo_get(request: Request):
+    driver=createDriver()
+    url = (await request.json())['url']
+    homepage = getCustomHomepage(driver,url)
+    driver.close()
+    return homepage
+
+
 @app.post("/backgroundDemo")
 async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
     
