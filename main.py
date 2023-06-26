@@ -30,19 +30,21 @@ async def demo_get():
 
 
 @app.post("/custompage")
-async def demo_get(request: Request):
+async def demo_post(request: Request):
     driver=createDriver()
+    print("custom")
     url = (await request.json())['url']
+    print(url)
     homepage = getCustomHomepage(driver,url)
     driver.close()
     return homepage
 
 
-@app.post("/backgroundDemo")
-async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
+# @app.post("/backgroundDemo")
+# async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
     
-    background_tasks.add_task(doBackgroundTask, inp)
-    return {"message": "Success, background task started"}
+#     background_tasks.add_task(doBackgroundTask, inp)
+#     return {"message": "Success, background task started"}
     
 
 
