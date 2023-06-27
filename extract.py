@@ -29,9 +29,9 @@ def createDriver() -> webdriver.Chrome:
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
 
     
-with pyvirtualdisplay.Display(visible=0, size=(800, 600)) as _:
-    driver.get("https://www.google.com")
-    return driver.page_source
+    with pyvirtualdisplay.Display(visible=0, size=(800, 600)) as _:
+        driver.get("https://www.google.com")
+        return driver.page_source
 
 def getCustomHomepage(driver: webdriver.Chrome,url) -> str:
     driver.get(url)
