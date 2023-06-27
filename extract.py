@@ -1,7 +1,11 @@
+
+import undetected_chromedriver as uc  # Note import before selenium
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import pyvirtualdisplay
 
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
 
@@ -23,6 +27,9 @@ def createDriver() -> webdriver.Chrome:
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
+
+    
+with pyvirtualdisplay.Display(visible=0, size=(800, 600)) as _:
     driver.get("https://www.google.com")
     return driver.page_source
 
