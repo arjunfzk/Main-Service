@@ -30,7 +30,10 @@ def getGoogleHomepage(driver: webdriver.Chrome) -> str:
 
     
     with pyvirtualdisplay.Display(visible=0, size=(800, 600)) as _:
-        driver.get("https://www.google.com")
+        import time
+        time.sleep(15)    
+        driver.get("https://www.msn.com/en-us/news/technology/wingpt-is-a-new-chatgpt-app-for-your-ancient-windows-31-pc/ar-AA1d2RZR")
+        time.sleep(10)
         return driver.page_source
 
 def getCustomHomepage(driver: webdriver.Chrome,url) -> str:
